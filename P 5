@@ -1,0 +1,16 @@
+     PRATICAL 5:Program to apply Discrete Fourier Transform on an image
+I=imread("vege.jpg");
+subplot(2,2,1)
+imshow(I)
+title("original")
+I=double(I);
+
+J=fft2(I);
+subplot(2,2,2)
+imshow(J)
+title("fourier transform image")
+
+L=fftshift(real(J));
+subplot(2,2,3)
+imshow(L)
+title("shifted F.T image")
