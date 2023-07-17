@@ -1,0 +1,23 @@
+     PRATICAL 3:Program to plot the histogram of an image and categorise
+a = imread("cm.tif");
+a =double(a);
+big=256;
+[row ,col ] = size(a);
+c=row*col;
+h=zeros(1,300);
+z = zeros(1,300);
+for n = 1:1:row
+for m = 1:1:col
+if a(n,m)==0
+a(n,m) = 1;
+end
+end
+end
+for n = 1:1:row
+for m = 1:1:col
+t= a(n,m);
+h(t) = h(t)+1;
+end
+end
+subplot(1,2,1);imshow(uint8(a));title('Image');
+subplot(1,2,2);bar(h);title('hist');
