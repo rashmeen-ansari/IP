@@ -1,0 +1,20 @@
+          PRATICAL 4:Program to read a color image and segment into RGB planes , histogram of color image
+a = imread('vege.jpg');
+figure(3),subplot(2,2,1),imshow(a);
+title('Orignal Image');
+k=rgb2ntsc(a);
+figure(3),subplot(2,2,2),imshow(k);
+title('RGB TO NTSC');
+l=rgb2ycbcr(a);
+figure(3),subplot(2,2,3),imshow(l);
+title('RGB TO YCbCr');
+m=imcomplement(a);
+figure(3),subplot(2,2,4),imshow(m);
+title('RGB TO CMY');
+imr=a(:,:,1);
+img=a(:,:,2);
+imb=a(:,:,3);
+figure(4),subplot(2,2,1),imshow(a),title('original image');
+figure(4),subplot(2,2,2),imshow(imr),title('Red');
+figure(4),subplot(2,2,3),imshow(img),title('Green');
+figure(4),subplot(2,2,4),imshow(imb),title('Blue');
